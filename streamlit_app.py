@@ -79,8 +79,7 @@ def display_prediction(y_new):
     result = pd.DataFrame({'Probability': y_new}, index=np.arange(7))
     result = result.reset_index()
     result.columns = ['Classes', 'Probability']
-    # change lesion_type_dict = {2: 'Benign keratosis-like lesions', 4: 'Melanocytic nevi', 3: 'Dermatofibroma',
-                        5: 'Melanoma', 6: 'Vascular lesions', 1: 'Basal cell carcinoma', 0: 'Actinic keratoses'}
+    change lesion_type_dict = {1: 'Monkeypox', 2: 'Chickenpox', 3: 'Measles', 4: 'Normal Skin'}
     result["Classes"] = result["Classes"].map(lesion_type_dict)
     return result
 
