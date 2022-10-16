@@ -79,7 +79,7 @@ def display_prediction(y_new):
     result = pd.DataFrame({'Probability': y_new}, index=np.arange(7))
     result = result.reset_index()
     result.columns = ['Classes', 'Probability']
-    change lesion_type_dict = {1: 'Monkeypox', 2: 'Chickenpox', 3: 'Measles', 4: 'Normal Skin'}
+    lesion_type_dict = {1: 'Monkeypox', 2: 'Chickenpox', 3: 'Measles', 4: 'Normal Skin'}
     result["Classes"] = result["Classes"].map(lesion_type_dict)
     return result
 
